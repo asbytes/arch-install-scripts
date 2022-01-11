@@ -2,7 +2,7 @@ if ! declare -F _pacman_pkg > /dev/null; then
     _completion_loader pacman
 fi
 
-_pacstrap() {
+_pacstrap-noroot() {
     compopt +o dirnames +o default
     local cur prev opts
     COMPREPLY=()
@@ -35,4 +35,4 @@ _pacstrap() {
     compopt -o dirnames
 }
 
-complete -F _pacstrap pacstrap
+complete -F _pacstrap-noroot pacstrap-noroot
